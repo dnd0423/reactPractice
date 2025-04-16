@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import './style.css';
+import React, { useState } from "react";
+import "./style.css";
 
 function App() {
   // 할일 목록을 저장하는 상자
   const [todoList, setTodoList] = useState([]);
 
   // 새로 추가할 할일 목록을 저장하는 상자
-  const [newTodo, setNewTodo] = useState('');
+  const [newTodo, setNewTodo] = useState("");
 
   // 새로운 할일 추가하는 함수
   const addNewTodo = () => {
-    if (newTodo.trim() !== '') {
+    if (newTodo.trim() !== "") {
       setTodoList([...todoList, newTodo]);
-      setNewTodo(''); // 입력 필드를 비워주는 것
+      setNewTodo(""); // 입력 필드를 비워주는 것
     }
   };
 
@@ -29,7 +29,10 @@ function App() {
   return (
     <div>
       <h1>To Do List </h1>
-      <input type="text" value={newTodo} onChange={(e) => {
+      <input
+        type="text"
+        value={newTodo}
+        onChange={(e) => {
           setNewTodo(e.target.value);
         }}
       />
